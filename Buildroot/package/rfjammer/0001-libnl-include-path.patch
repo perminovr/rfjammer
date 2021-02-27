@@ -1,0 +1,31 @@
+--- a/networking/src/nlwrapper.h
++++ b/networking/src/nlwrapper.h
+@@ -16,17 +16,17 @@
+ 
+ #include <QLinkedList>
+ 
+-#include <netlink/netlink.h>
+-#include <netlink/socket.h>
+-#include <netlink/cache.h>
+-#include <netlink/addr.h>
+-#include <netlink/route/link.h>
+-#include <netlink/route/addr.h>
+-#include <netlink/route/nexthop.h>
+-#include <netlink/route/route.h>
+-#include <netlink/cli/utils.h>
+-#include <netlink/cli/addr.h>
+-#include <netlink/cli/route.h>
++#include <libnl3/netlink/netlink.h>
++#include <libnl3/netlink/socket.h>
++#include <libnl3/netlink/cache.h>
++#include <libnl3/netlink/addr.h>
++#include <libnl3/netlink/route/link.h>
++#include <libnl3/netlink/route/addr.h>
++#include <libnl3/netlink/route/nexthop.h>
++#include <libnl3/netlink/route/route.h>
++#include <libnl3/netlink/cli/utils.h>
++#include <libnl3/netlink/cli/addr.h>
++#include <libnl3/netlink/cli/route.h>
+ 
+ 
+ typedef struct nl_object* nl_object_t;

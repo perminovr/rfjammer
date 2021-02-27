@@ -1,0 +1,3 @@
+set solib-search-path /home/roman/data/WORKSPACES/LINUX_WS/Qt/build-only/build-rfjammer-imx6-Debug/usr/lib
+set sysroot /home/roman/Downloads/starterkit-buildroot-2016.11/buildroot-2016.11-sk/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot
+handle SIGILL nostop

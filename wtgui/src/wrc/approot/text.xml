@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages xmlns:if="Wt.WTemplate.conditions">
+
+	<message id="main-title">RF Jammers Control</message>
+
+	<message id="btn-apply">Apply</message>
+	<message id="radiobtn-en">enable</message>
+	<message id="radiobtn-dis">disable</message>
+	<message id="in-err-mbox-title">Input Error</message>
+	<message id="in-err-mbox-info">Input Error</message>
+
+	<message id="nav-devices">Devices</message>
+	<message id="nav-radio">Radio</message>
+	<message id="nav-netw">Networking</message>
+	<message id="nav-time">SysTime</message>
+	<message id="nav-vpn">VPN</message>
+
+	<message id="menu-devs-edit-tooltip">Device address HEX</message>
+	<message id="menu-devs-btn-add">Add</message>
+
+	<message id="menu-devs-btn-list">Get List</message>
+	<message id="menu-devs-btn-stat">Get Status</message>
+	<message id="menu-devs-boxh-ctl">Control</message>
+	<message id="menu-devs-boxh-stat">Status</message>
+	<message id="menu-devs-ctl-siglvl">Signal Level:</message>
+	<message id="menu-devs-ctl-state">State:</message>
+	<message id="menu-devs-stat-autoupd">Autoupdate</message>
+	<message id="menu-devs-stat-h-prm">Parameter</message>
+	<message id="menu-devs-stat-h-val">Value</message>
+	<message id="menu-devs-stat-h-desc">Description</message>
+	<message id="menu-devs-stat-siglvl">Signal Level</message>
+	<message id="menu-devs-stat-siglvl-desc">Signal Level</message>
+	<message id="menu-devs-stat-en">Enabled</message>
+	<message id="menu-devs-stat-en-desc">Enabled</message>
+	<message id="menu-devs-stat-T">Temperature</message>
+	<message id="menu-devs-stat-T-desc">Temperature</message>
+	<message id="menu-devs-stat-rfpwr">Reflected Power</message>
+	<message id="menu-devs-stat-rfpwr-desc">Reflected Power</message>
+	<message id="menu-devs-stat-rfout">Output RF</message>
+	<message id="menu-devs-stat-rfout-desc">Output RF</message>
+	<message id="menu-devs-stat-ta">T alarm</message>
+	<message id="menu-devs-stat-ta-desc">T alarm</message>
+	<message id="menu-devs-stat-va">VSWR alarm</message>
+	<message id="menu-devs-stat-va-desc">VSWR alarm</message>
+	<message id="menu-devs-stat-it">Internal Temperature</message>
+	<message id="menu-devs-stat-it-desc">Internal Temperature</message>
+	<message id="menu-devs-stat-U">Voltage</message>
+	<message id="menu-devs-stat-U-desc">Voltage</message>
+	<message id="menu-devs-stat-cio">Case is Opened</message>
+	<message id="menu-devs-stat-cio-desc">Case is Opened</message>
+
+	<message id="menu-radio-ta">TimeoutAck:</message>
+	<message id="menu-radio-ta-tooltip">123</message>
+	<message id="menu-radio-tr">TimeoutRepeat:</message>
+	<message id="menu-radio-tr-tooltip">123</message>
+	<message id="menu-radio-sp">SlavePause:</message>
+	<message id="menu-radio-sp-tooltip">123</message>
+	<message id="menu-radio-pp">PollPause:</message>
+	<message id="menu-radio-pp-tooltip">123</message>
+
+	<message id="menu-netw-mode">Mode:</message>
+	<message id="menu-netw-mode-tooltip">123</message>
+	<message id="menu-netw-static-ip">Static Ip:</message>
+	<message id="menu-netw-static-ip-tooltip">123</message>
+	<message id="menu-netw-mask">Mask:</message>
+	<message id="menu-netw-mask-tooltip">123</message>
+	<message id="menu-netw-gw">Gateway:</message>
+	<message id="menu-netw-gw-tooltip">123</message>
+	<message id="menu-netw-sslot-label">Server Slot:</message>
+	<message id="menu-netw-sslot-vpn">vpn</message>
+	<message id="menu-netw-sslot-dev">local</message>
+	<message id="menu-netw-sslot-tooltip">123</message>
+	<message id="menu-netw-sport">Server Port:</message>
+	<message id="menu-netw-sport-tooltip">123</message>
+
+	<message id="menu-time-cur">Current Time:</message>
+	<message id="menu-time-set">Setup Time:</message>
+	<message id="menu-time-set-tooltip">format: HH:MM DD-MM-YYYY</message>
+
+	<message id="menu-vpn-upload">Upload config file .ovpn</message>
+	<message id="menu-vpn-upload-tooltip">123</message>
+	<message id="menu-vpn-ip">Current Ip:</message>
+
+</messages>

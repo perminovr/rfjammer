@@ -1,0 +1,17 @@
+--- a/networking/udhcp/dhcpc.c
++++ b/networking/udhcp/dhcpc.c
+@@ -1410,6 +1410,14 @@
+ 	timeout = 0;
+ 	already_waited_sec = 0;
+ 
++#if BB_MMU /* -b is not supported on NOMMU */
++	if (opt & OPT_b) { /* background if no lease */
++		client_background();
++		/* do not background again! */
++		opt = ((opt & ~OPT_b));
++	}
++#endif
++
+ 	/* Main event loop. select() waits on signal pipe and possibly
+ 	 * on sockfd.
+ 	 * "continue" statements in code below jump to the top of the loop.

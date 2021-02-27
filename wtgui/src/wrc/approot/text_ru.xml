@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages xmlns:if="Wt.WTemplate.conditions">
+
+	<message id="main-title">RF Jammers Control</message>
+
+	<message id="btn-apply">Применить</message>
+	<message id="radiobtn-en">включен</message>
+	<message id="radiobtn-dis">выключен</message>
+	<message id="in-err-mbox-title">Ошибка ввода</message>
+	<message id="in-err-mbox-info">Ошибка ввода</message>
+
+	<message id="nav-devices">Устройства</message>
+	<message id="nav-radio">Радио параметры</message>
+	<message id="nav-netw">Сетевые параметры</message>
+	<message id="nav-time">Системное время</message>
+	<message id="nav-vpn">VPN</message>
+
+	<message id="menu-devs-edit-tooltip">Адрес устройства HEX</message>
+	<message id="menu-devs-btn-add">Добавить</message>
+
+	<message id="menu-devs-btn-list">Обновить</message>
+	<message id="menu-devs-btn-stat">Запрос статуса</message>
+	<message id="menu-devs-boxh-ctl">Управление</message>
+	<message id="menu-devs-boxh-stat">Статус</message>
+	<message id="menu-devs-ctl-siglvl">Уровень сигнала:</message>
+	<message id="menu-devs-ctl-state">Состояние:</message>
+	<message id="menu-devs-stat-autoupd">Автообновление</message>
+	<message id="menu-devs-stat-h-prm">Параметр</message>
+	<message id="menu-devs-stat-h-val">Значение</message>
+	<message id="menu-devs-stat-h-desc">Описание</message>
+	<message id="menu-devs-stat-siglvl">Уровень сигнала</message>
+	<message id="menu-devs-stat-siglvl-desc">Уровень сигнала</message>
+	<message id="menu-devs-stat-en">Включен</message>
+	<message id="menu-devs-stat-en-desc">Включен</message>
+	<message id="menu-devs-stat-T">Температура</message>
+	<message id="menu-devs-stat-T-desc">Температура</message>
+	<message id="menu-devs-stat-rfpwr">Reflected Power</message>
+	<message id="menu-devs-stat-rfpwr-desc">Reflected Power</message>
+	<message id="menu-devs-stat-rfout">Output RF</message>
+	<message id="menu-devs-stat-rfout-desc">Output RF</message>
+	<message id="menu-devs-stat-ta">T alarm</message>
+	<message id="menu-devs-stat-ta-desc">T alarm</message>
+	<message id="menu-devs-stat-va">VSWR alarm</message>
+	<message id="menu-devs-stat-va-desc">VSWR alarm</message>
+	<message id="menu-devs-stat-it">Внутр. температура</message>
+	<message id="menu-devs-stat-it-desc">Внутр. температура</message>
+	<message id="menu-devs-stat-U">Voltage</message>
+	<message id="menu-devs-stat-U-desc">Voltage</message>
+	<message id="menu-devs-stat-cio">Case is Opened</message>
+	<message id="menu-devs-stat-cio-desc">Case is Opened</message>
+
+	<message id="menu-radio-ta">TimeoutAck:</message>
+	<message id="menu-radio-ta-tooltip">123</message>
+	<message id="menu-radio-tr">TimeoutRepeat:</message>
+	<message id="menu-radio-tr-tooltip">123</message>
+	<message id="menu-radio-sp">SlavePause:</message>
+	<message id="menu-radio-sp-tooltip">123</message>
+	<message id="menu-radio-pp">PollPause:</message>
+	<message id="menu-radio-pp-tooltip">123</message>
+
+	<message id="menu-netw-mode">Режим:</message>
+	<message id="menu-netw-mode-tooltip">123</message>
+	<message id="menu-netw-static-ip">Статический Ip:</message>
+	<message id="menu-netw-static-ip-tooltip">123</message>
+	<message id="menu-netw-mask">Маска:</message>
+	<message id="menu-netw-mask-tooltip">123</message>
+	<message id="menu-netw-gw">Шлюз:</message>
+	<message id="menu-netw-gw-tooltip">123</message>
+	<message id="menu-netw-sslot-label">Server Slot:</message>
+	<message id="menu-netw-sslot-vpn">vpn</message>
+	<message id="menu-netw-sslot-dev">local</message>
+	<message id="menu-netw-sslot-tooltip">123</message>
+	<message id="menu-netw-sport">Порт сервера:</message>
+	<message id="menu-netw-sport-tooltip">123</message>
+
+	<message id="menu-time-cur">Текущее время:</message>
+	<message id="menu-time-set">Установка:</message>
+	<message id="menu-time-set-tooltip">формат: ЧЧ:ММ ДД-ММ-ГГГГ</message>
+
+	<message id="menu-vpn-upload">Загрузка файла конфигурации .ovpn</message>
+	<message id="menu-vpn-upload-tooltip">123</message>
+	<message id="menu-vpn-ip">Текущий Ip:</message>
+
+</messages>

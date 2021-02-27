@@ -1,0 +1,154 @@
+--- a/arch/arm/boot/dts/imx6qdl-oem.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-oem.dtsi
+@@ -135,21 +135,10 @@
+ 	pinctrl-0 = <&pinctrl_ecspi1_oem>;
+ 	status = "okay";
+ 
+-	tsc2046@0 {
+-		compatible = "ti,tsc2046";
++	spidev {
++		compatible = "rohm,dh2228fv";
++		spi-max-frequency = <10000000>;
+ 		reg = <0>;
+-		spi-max-frequency = <100000>;
+-		/* pen irq is GPIO4_15 */
+-		interrupt-parent = <&gpio4>;
+-		interrupts = <15 0x2>;
+-		pendown-gpio = <&gpio4 15 0>;
+-		vcc-supply = <&reg_3p3v>;
+-
+-		ti,debounce-max = /bits/ 16 <5>;
+-		ti,debounce-tol = /bits/ 16 <10>;
+-		ti,debounce-rep = /bits/ 16 <0>;
+-
+-		linux,wakeup;
+ 	};
+ };
+ 
+@@ -295,6 +284,13 @@
+ 				MX6QDL_PAD_SD4_DAT3__GPIO2_IO11             0x80000000
+ 				/* USB Host power */
+ 				MX6QDL_PAD_SD3_DAT3__GPIO7_IO07             0x80000000
++
++                MX6QDL_PAD_EIM_DA11__GPIO3_IO11            0x80000000
++                MX6QDL_PAD_EIM_DA12__GPIO3_IO12            0x80000000
++                MX6QDL_PAD_EIM_DA13__GPIO3_IO13            0x80000000
++                MX6QDL_PAD_EIM_DA14__GPIO3_IO14            0x80000000
++                MX6QDL_PAD_EIM_DA15__GPIO3_IO15            0x80000000
++                MX6QDL_PAD_EIM_EB0__GPIO2_IO28             0x80000000
+ 			>;
+ 		};
+ 	};
+--- a/arch/arm/boot/dts/imx6qdl-sodimm.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-sodimm.dtsi
+@@ -123,52 +123,24 @@
+ };
+ 
+ &ecspi1 {
+-	fsl,spi-num-chipselects = <1>;
+-	cs-gpios = <&gpio5 25 0>;
++	//fsl,spi-num-chipselects = <1>;
++	//cs-gpios = <&gpio5 25 0>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_ecspi1_sodimm>;
+ 	status = "okay";
+-
+-	tsc2046@0 {
+-		compatible = "ti,tsc2046";
+-		reg = <0>;
+-		spi-max-frequency = <100000>;
+-		/* pen irq is GPIO3_27 */
+-		interrupt-parent = <&gpio3>;
+-		interrupts = <27 0x2>;
+-		pendown-gpio = <&gpio3 27 0>;
+-		vcc-supply = <&reg_3p3v>;
+-
+-		ti,debounce-max = /bits/ 16 <5>;
+-		ti,debounce-tol = /bits/ 16 <10>;
+-		ti,debounce-rep = /bits/ 16 <0>;
+-
+-		linux,wakeup;
+-	};
+ };
+ 
+ &ecspi4 {
+ 	fsl,spi-num-chipselects = <1>;
+-	cs-gpios = <&gpio3 20 0>;
++	cs-gpios = <&gpio5 25 0>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_ecspi4_sodimm>;
+ 	status = "okay";
+ 
+-	tsc2046@0 {
+-		compatible = "ti,tsc2046";
++	spidev {
++		compatible = "rohm,dh2228fv";
++		spi-max-frequency = <10000000>;
+ 		reg = <0>;
+-		spi-max-frequency = <100000>;
+-		/* pen irq is GPIO4_10 */
+-		interrupt-parent = <&gpio4>;
+-		interrupts = <10 0x2>;
+-		pendown-gpio = <&gpio4 10 0>;
+-		vcc-supply = <&reg_3p3v>;
+-
+-		ti,debounce-max = /bits/ 16 <5>;
+-		ti,debounce-tol = /bits/ 16 <10>;
+-		ti,debounce-rep = /bits/ 16 <0>;
+-
+-		linux,wakeup;
+ 	};
+ };
+ 
+@@ -269,7 +241,7 @@
+ 				/* ECSPI1 CS0 */
+ 				MX6QDL_PAD_CSI0_DAT7__GPIO5_IO25            0x80000000
+ 				/* ECSPI4 CS0 */
+-				MX6QDL_PAD_EIM_D20__GPIO3_IO20              0x80000000
++				//MX6QDL_PAD_EIM_D20__GPIO3_IO20              0x80000000
+ 				/* LVDS0 TS PENIRQ */
+ 				MX6QDL_PAD_KEY_COL2__GPIO4_IO10             0x80000000
+ 				/* LVDS1 TS PENIRQ */
+@@ -286,6 +258,13 @@
+ 				MX6QDL_PAD_SD2_DAT2__GPIO1_IO13             0x80000000
+ 				MX6QDL_PAD_SD2_DAT1__GPIO1_IO14             0x80000000
+ 				MX6QDL_PAD_SD2_DAT0__GPIO1_IO15             0x80000000
++
++                MX6QDL_PAD_CSI0_DAT18__GPIO6_IO04          0x0000B0F1
++                MX6QDL_PAD_EIM_DA9__GPIO3_IO09             0x0000B0B1
++                MX6QDL_PAD_EIM_DA10__GPIO3_IO10            0x0000B0B1
++                MX6QDL_PAD_EIM_DA13__GPIO3_IO13            0x0000B0B1
++                MX6QDL_PAD_EIM_DA15__GPIO3_IO15            0x0000B0B1
++				MX6QDL_PAD_EIM_D20__GPIO3_IO20             0x0000B0B1
+ 			>;
+ 		};
+ 	};
+@@ -315,8 +294,8 @@
+ 		pinctrl_ecspi4_sodimm: ecspi4-sodimm {
+ 			fsl,pins = <
+ 				MX6QDL_PAD_EIM_D21__ECSPI4_SCLK             0x100b1
+-				MX6QDL_PAD_EIM_D22__ECSPI4_MISO             0x100b1
+-				MX6QDL_PAD_EIM_D28__ECSPI4_MOSI             0x100b1
++				MX6QDL_PAD_EIM_D22__ECSPI4_MISO             0x1b0b1
++				MX6QDL_PAD_EIM_D28__ECSPI4_MOSI             0x1b0b1
+ 			>;
+ 		};
+ 	};
+@@ -415,7 +394,7 @@
+ 				MX6QDL_PAD_CSI0_DAT15__IPU1_CSI0_DATA15     0x80000000
+ 				MX6QDL_PAD_CSI0_DAT16__IPU1_CSI0_DATA16     0x80000000
+ 				MX6QDL_PAD_CSI0_DAT17__IPU1_CSI0_DATA17     0x80000000
+-				MX6QDL_PAD_CSI0_DAT18__IPU1_CSI0_DATA18     0x80000000
++				//MX6QDL_PAD_CSI0_DAT18__IPU1_CSI0_DATA18     0x80000000
+ 				MX6QDL_PAD_CSI0_DAT19__IPU1_CSI0_DATA19     0x80000000
+ 				MX6QDL_PAD_CSI0_PIXCLK__IPU1_CSI0_PIXCLK    0x80000000
+ 				MX6QDL_PAD_CSI0_MCLK__IPU1_CSI0_HSYNC       0x80000000
+@@ -577,7 +556,7 @@
+ 				MX6QDL_PAD_EIM_LBA__EIM_LBA_B               0xb0b1
+ 				MX6QDL_PAD_EIM_EB0__EIM_EB0_B               0xb0b1
+ 				MX6QDL_PAD_EIM_EB1__EIM_EB1_B               0xb0b1
+-				MX6QDL_PAD_EIM_DA15__EIM_AD15               0xb0b1
++				//MX6QDL_PAD_EIM_DA15__EIM_AD15               0xb0b1
+ 				MX6QDL_PAD_EIM_DA14__EIM_AD14               0xb0b1
+ 				MX6QDL_PAD_EIM_DA13__EIM_AD13               0xb0b1
+ 				MX6QDL_PAD_EIM_DA12__EIM_AD12               0xb0b1

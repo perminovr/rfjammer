@@ -1,0 +1,66 @@
+
+SDK_PATH="/home/roman/Downloads/starterkit-buildroot-2016.11/buildroot-2016.11-sk/output/host"
+
+export SDK_SYS=
+export REAL_MULTIMACH_TARGET_SYS="usr/arm-buildroot-linux-gnueabihf/sysroot"
+
+export TOOLCHAIN_SYS=arm-linux-gnueabihf
+export TOOLCHAIN_PREFIX=$TOOLCHAIN_SYS-
+
+export SDK_PATH_TARGET=$SDK_PATH/$REAL_MULTIMACH_TARGET_SYS
+export SDK_PATH_NATIVE=$SDK_PATH/$SDK_SYS
+
+export PATH=${SDK_PATH_NATIVE}/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+export CPATH=${SDK_PATH_TARGET}/usr/include
+export PKG_CONFIG_SYSROOT_DIR=$SDK_PATH_TARGET
+export PKG_CONFIG_PATH=$SDK_PATH_TARGET/usr/lib/pkgconfig
+export PKG_CONFIG_ALLOW_SYSTEM_LIBS=1
+
+export CC="${TOOLCHAIN_PREFIX}gcc --sysroot=$SDK_PATH_TARGET"
+export CXX="${TOOLCHAIN_PREFIX}g++ --sysroot=$SDK_PATH_TARGET"
+export GDB=${TOOLCHAIN_PREFIX}gdb
+export CPP="${TOOLCHAIN_PREFIX}gcc -E --sysroot=$SDK_PATH_TARGET"
+export LD="${TOOLCHAIN_PREFIX}ld --sysroot=$SDK_PATH_TARGET"
+export NM=${TOOLCHAIN_PREFIX}nm
+export AS=${TOOLCHAIN_PREFIX}as
+export AR=${TOOLCHAIN_PREFIX}ar
+export RANLIB=${TOOLCHAIN_PREFIX}ranlib
+export OBJCOPY=${TOOLCHAIN_PREFIX}objcopy
+export OBJDUMP=${TOOLCHAIN_PREFIX}objdump
+export STRIP=${TOOLCHAIN_PREFIX}strip
+#export CONFIGURE_FLAGS="--target=arm-linux-gnueabi --host=arm-linux-gnueabi --build=x86_64-linux --with-libtool-sysroot=$SDK_PATH_TARGET"
+#export CPPFLAGS=" -march=armv7-a -mthumb -mfpu=neon -mfloat-abi=hard --sysroot=$SDK_PATH_TARGET"
+export CFLAGS="$CPPFLAGS"
+export CXXFLAGS="$CPPFLAGS"
+export LDFLAGS=" --sysroot=$SDK_PATH_TARGET"
+export OECORE_NATIVE_SYSROOT=$SDK_PATH_NATIVE
+export OECORE_TARGET_SYSROOT=$SDK_PATH_TARGET
+export OECORE_ACLOCAL_OPTS="-I $SDK_PATH_NATIVE/usr/share/aclocal"
+export OECORE_DISTRO_VERSION="2016.11"
+export OECORE_SDK_VERSION="2016.11"
+export PATH=$SDK_PATH_NATIVE/usr/bin/:$PATH
+export OE_QMAKE_CFLAGS="$CFLAGS"
+export OE_QMAKE_CXXFLAGS="$CXXFLAGS"
+export OE_QMAKE_LDFLAGS="$LDFLAGS"
+export OE_QMAKE_CC="$CC"
+export OE_QMAKE_CXX="$CXX"
+export OE_QMAKE_LINK="$CXX"
+export OE_QMAKE_AR="$AR"
+export OE_QMAKE_PREFIX_QT=/usr
+export OE_QMAKE_LIBDIR_QT=/usr/lib
+export OE_QMAKE_INCDIR_QT=/usr/include/qt5
+export OE_QMAKE_HOST_BINDIR_QT=$SDK_PATH_NATIVE/usr/bin/
+export OE_QMAKE_MOC=$SDK_PATH_NATIVE/usr/bin/moc
+export OE_QMAKE_UIC=$SDK_PATH_NATIVE/usr/bin/uic
+export OE_QMAKE_UIC3=$SDK_PATH_NATIVE/usr/bin/uic3
+export OE_QMAKE_RCC=$SDK_PATH_NATIVE/usr/bin/rcc
+export OE_QMAKE_QDBUSCPP2XML=$SDK_PATH_NATIVE/usr/bin/qdbuscpp2xml
+export OE_QMAKE_QDBUSXML2CPP=$SDK_PATH_NATIVE/usr/bin/qdbusxml2cpp
+#export OE_QMAKE_QT_CONFIG=$SDK_PATH_TARGET/usr/lib//mkspecs/qconfig.pri
+export OE_QMAKE_QT_CONFIG=$SDK_PATH_TARGET/usr/mkspecs/qconfig.pri
+export OE_QT_HOST_DATA="${SDK_PATH_TARGET}"
+export QT_HOST_DATA="${SDK_PATH_TARGET}"
+export OE_QMAKE_STRIP="echo"
+export QMAKESPEC=$SDK_PATH_TARGET/usr/lib/mkspecs/linux-oe-g++
+export QMAKE_DEFAULT_LIBDIRS=${QT_QMAKE_LIBDIR_QT}
+export QMAKE_DEFAULT_INCDIRS=${QT_QMAKE_INCDIR_QT}

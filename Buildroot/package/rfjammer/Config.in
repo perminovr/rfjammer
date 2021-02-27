@@ -1,0 +1,5 @@
+config BR2_PACKAGE_RFJAMMER
+	bool "rfjammer"
+	depends on (BR2_PACKAGE_QT5 && BR2_PACKAGE_LIBWT && BR2_PACKAGE_LIBNL && BR2_PACKAGE_LIBNL_TOOLS)
+	help
+	  RF Jammer
